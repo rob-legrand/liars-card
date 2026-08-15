@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head>
+
+<meta charset="UTF-8" />
+<title>Liar&rsquo;s card</title>
+<link href="style.css" rel="stylesheet" />
+
+</head><body>
+
+<h1>Liar&rsquo;s card</h1>
+<div class="gameboard-section" id="score-section">
+   <div>Your score:</div>
+   <div id="score"> </div>
+</div>
+<div class="gameboard-section" id="player-hand">
+   <div>Your card:</div>
+   <div>
+      <div class="card card-value-1" id="player-hand-1">1</div>
+      <div class="card card-value-2" id="player-hand-2">2</div>
+      <div class="card card-value-3" id="player-hand-3">3</div>
+      <div class="card card-value-4" id="player-hand-4">4</div>
+   </div>
+</div>
+<div class="gameboard-section" id="player-claim">
+   <div id="claim-instructions"> </div>
+   <div>
+      <div class="card card-value-1" id="player-claim-1">1</div>
+      <div class="card card-value-2" id="player-claim-2">2</div>
+      <div class="card card-value-3" id="player-claim-3">3</div>
+      <div class="card card-value-4" id="player-claim-4">4</div>
+   </div>
+</div>
+<div class="gameboard-section" id="opponent-claim">
+   <div>Your opponent has claimed:</div>
+   <div>
+      <div class="card card-value-1" id="opponent-claim-1">1</div>
+      <div class="card card-value-2" id="opponent-claim-2">2</div>
+      <div class="card card-value-3" id="opponent-claim-3">3</div>
+      <div class="card card-value-4" id="opponent-claim-4">4</div>
+   </div>
+</div>
+<div class="gameboard-section" id="opponent-hand">
+   <div>Your opponent&rsquo;s card:</div>
+   <div>
+      <div class="card card-value-1" id="opponent-hand-1">1</div>
+      <div class="card card-value-2" id="opponent-hand-2">2</div>
+      <div class="card card-value-3" id="opponent-hand-3">3</div>
+      <div class="card card-value-4" id="opponent-hand-4">4</div>
+   </div>
+</div>
+<div class="gameboard-section" id="result-section">
+   <div id="result">&nbsp;</div>
+   <div id="start-next-hand">Next hand</div>
+</div>
+<canvas id="score-history"></canvas>
+
+<script src="script.js"></script>
+
+</body></html>

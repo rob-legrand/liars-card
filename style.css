@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+body {
+   background-color: #f5fff5;
+   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   text-align: center;
+}
+
+h1 {
+   color: #660066;
+   font-family: "Palatino Linotype", "Book Antiqua", Georgia, Palatino, Garamond, serif;
+   font-size: 300%;
+   font-weight: normal;
+}
+
+.card {
+   border: 3px #000000 solid;
+   display: inline-block;
+   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-size: 36px;
+   height: 48px;
+   margin: 3px;
+   padding: 3px;
+   text-align: center;
+   width: 40px;
+}
+
+.card.hidden {
+   visibility: hidden;
+}
+
+.card.selected {
+   border-color: #00cc00;
+}
+
+.card-value-1 {
+   background-color: #663300;
+   color: #ffffff;
+}
+
+.card-value-2 {
+   background-color: #443322;
+   color: #ffffff;
+}
+
+.card-value-3 {
+   background-color: #223344;
+   color: #ffffff;
+}
+
+.card-value-4 {
+   background-color: #003366;
+   color: #ffffff;
+}
+
+.gameboard-section {
+   padding: 10px;
+   visibility: hidden;
+}
+
+.gameboard-section.visible {
+   visibility: visible;
+}
+
+.selectable .card {
+   cursor: pointer;
+}
+
+.selectable .card:hover {
+   border-color: #660066;
+}
+
+.selectable .card:active {
+   border-color: #006600;
+}
+
+#score {
+   color: #663366;
+   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-size: 36px;
+}
+
+#start-next-hand {
+   background-color: #553355;
+   border: 3px #000000 solid;
+   color: #ffffff;
+   cursor: pointer;
+   display: inline-block;
+   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-size: 24px;
+   margin: 24px;
+   padding: 6px;
+   text-align: center;
+   text-decoration: none;
+}
+
+#start-next-hand:hover {
+   border-color: #006600;
+}
+
+#start-next-hand:active {
+   border-color: #660066;
+}
