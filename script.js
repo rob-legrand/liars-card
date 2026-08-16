@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
    document.getElementById('start-next-hand').addEventListener('click', startNewHand);
 
-   historyCanvas = document.getElementById('history');
+   historyCanvas = document.getElementById('score-history');
    historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
 
    if (localStorage && localStorage.liarsCardGame) {
