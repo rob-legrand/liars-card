@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
          key = (ev.key || String.fromCharCode(ev.charCode)).toLowerCase();
          specialStrategies = {
             a: [3, 3, 3, 3], // always aggressively all-in
+            c: [0, 0, 0, 3], // conservative: bet only when can't lose
             h: [0, 1, 2, 3], // honest
             s: [1, 0, 0, 3], // best strategy against default AI ("sneaky")
             w: [3, 3, 2, 0], // worst strategy against default AI
