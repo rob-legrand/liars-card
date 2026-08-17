@@ -198,7 +198,11 @@ document.addEventListener('DOMContentLoaded', function () {
          } else {
             card = key.charCodeAt(0) - '1'.charCodeAt(0);
          }
-         if (game.hasOwnProperty('opponentClaim')) {
+         if (key === '!') {
+            localStorage.removeItem('liarsCardGame');
+            game = getGameFromStorage();
+            startNewHand();
+         } else if (game.hasOwnProperty('opponentClaim')) {
             startNewHand();
          } else if (card >= 0 && card < game.numCards) {
             playerClaimFuncs[card]();
