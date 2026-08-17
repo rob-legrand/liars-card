@@ -121,23 +121,23 @@ document.addEventListener('DOMContentLoaded', function () {
    };
 
    (function () {
-      var createPlayerClaimFunc, newGame, playerClaimFuncs, whichCard;
+      var createPlayerClaimFunc, getGameFromStorage, playerClaimFuncs, whichCard;
 
-      newGame = {
-         score: 0,
-         scoreChange: 0,
-         scoreHistory: [],
-         lowestScore: 0,
-         highestScore: 0,
-         numCards: 4
-      };
-
-      game = localStorage && localStorage.liarsCardGame ? JSON.parse(localStorage.liarsCardGame) : {};
-      Object.keys(newGame).forEach(function (prop) {
-         if (!game.hasOwnProperty(prop)) {
-            game[prop] = newGame[prop];
+      getGameFromStorage = function () {
+         try {
+            return JSON.parse(localStorage.getItem('liarsCardGame') || '');
+         } catch (ex) {
+            return {
+               score: 0,
+               scoreChange: 0,
+               scoreHistory: [],
+               lowestScore: 0,
+               highestScore: 0,
+               numCards: 4
+            };
          }
-      });
+      };
+      game = getGameFromStorage();
 
       createPlayerClaimFunc = function (card) {
          return function () {
