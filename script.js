@@ -109,6 +109,16 @@ document.addEventListener('DOMContentLoaded', function () {
       updateGameboard();
    };
 
+   // "minimax" strategy found by hill-climbing
+   chooseOpponentClaim = (card) => (
+      card >= 3
+      ? game.numCards - 1
+      : Math.random() * 3 < 2
+      ? 0
+      : 1
+   );
+
+   // evolved defensive strategy
    chooseOpponentClaim = function (card) {
       var allInProbs, claim;
       allInProbs = [0.3, 0.1, 0.9, 1.0];
