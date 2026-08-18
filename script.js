@@ -15,46 +15,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
    updateGameboard = function () {
       var whichCard, whichScore;
-      document.getElementById('score-section').classList.add('visible');
+      document.querySelector('#score-section').classList.add('visible');
       if (game.score > 0) {
-         document.getElementById('score').innerHTML = '+' + game.score;
+         document.querySelector('#score').innerHTML = '+' + game.score;
       } else if (game.score < 0) {
-         document.getElementById('score').innerHTML = '&minus;' + -game.score;
+         document.querySelector('#score').innerHTML = '&minus;' + -game.score;
       } else {
-         document.getElementById('score').innerHTML = '0';
+         document.querySelector('#score').innerHTML = '0';
       }
       if (game.hasOwnProperty('playerCard')) {
-         document.getElementById('player-hand').classList.add('visible');
-         document.getElementById('player-claim').classList.add('visible');
+         document.querySelector('#player-hand').classList.add('visible');
+         document.querySelector('#player-claim').classList.add('visible');
       } else {
-         document.getElementById('player-hand').classList.remove('visible');
-         document.getElementById('player-claim').classList.remove('visible');
+         document.querySelector('#player-hand').classList.remove('visible');
+         document.querySelector('#player-claim').classList.remove('visible');
       }
       if (game.hasOwnProperty('opponentClaim')) {
-         document.getElementById('claim-instructions').innerHTML = 'You have claimed:';
-         document.getElementById('player-claim').classList.remove('selectable');
-         document.getElementById('opponent-claim').classList.add('visible');
-         document.getElementById('opponent-hand').classList.add('visible');
+         document.querySelector('#claim-instructions').innerHTML = 'You have claimed:';
+         document.querySelector('#player-claim').classList.remove('selectable');
+         document.querySelector('#opponent-claim').classList.add('visible');
+         document.querySelector('#opponent-hand').classList.add('visible');
          if (game.playerClaim > game.opponentClaim) {
-            document.getElementById('opponent-hand').classList.remove('visible');
-            document.getElementById('result').innerHTML = 'Your claim is higher.&nbsp; You win your opponent&rsquo;s claim (+' + game.scoreChange + ').';
+            document.querySelector('#opponent-hand').classList.remove('visible');
+            document.querySelector('#result').innerHTML = 'Your claim is higher.&nbsp; You win your opponent&rsquo;s claim (+' + game.scoreChange + ').';
          } else if (game.playerClaim < game.opponentClaim) {
-            document.getElementById('opponent-hand').classList.remove('visible');
-            document.getElementById('result').innerHTML = 'Your opponent&rsquo;s claim is higher.&nbsp; You lose your claim (&minus;' + -game.scoreChange + ').';
+            document.querySelector('#opponent-hand').classList.remove('visible');
+            document.querySelector('#result').innerHTML = 'Your opponent&rsquo;s claim is higher.&nbsp; You lose your claim (&minus;' + -game.scoreChange + ').';
          } else if (game.playerCard > game.opponentCard) {
-            document.getElementById('result').innerHTML = 'The claims are equal; your card is higher.&nbsp; You win your opponent&rsquo;s claim (+' + game.scoreChange + ').';
+            document.querySelector('#result').innerHTML = 'The claims are equal; your card is higher.&nbsp; You win your opponent&rsquo;s claim (+' + game.scoreChange + ').';
          } else if (game.playerCard < game.opponentCard) {
-            document.getElementById('result').innerHTML = 'The claims are equal; your opponent&rsquo;s card is higher.&nbsp; You lose your claim (&minus;' + -game.scoreChange + ').';
+            document.querySelector('#result').innerHTML = 'The claims are equal; your opponent&rsquo;s card is higher.&nbsp; You lose your claim (&minus;' + -game.scoreChange + ').';
          } else {
-            document.getElementById('result').innerHTML = 'The claims are equal; the cards are equal (0).';
+            document.querySelector('#result').innerHTML = 'The claims are equal; the cards are equal (0).';
          }
-         document.getElementById('result-section').classList.add('visible');
+         document.querySelector('#result-section').classList.add('visible');
       } else {
-         document.getElementById('claim-instructions').innerHTML = 'Choose card to claim you have:';
-         document.getElementById('player-claim').classList.add('selectable');
-         document.getElementById('opponent-claim').classList.remove('visible');
-         document.getElementById('opponent-hand').classList.remove('visible');
-         document.getElementById('result-section').classList.remove('visible');
+         document.querySelector('#claim-instructions').innerHTML = 'Choose card to claim you have:';
+         document.querySelector('#player-claim').classList.add('selectable');
+         document.querySelector('#opponent-claim').classList.remove('visible');
+         document.querySelector('#opponent-hand').classList.remove('visible');
+         document.querySelector('#result-section').classList.remove('visible');
       }
       for (whichCard = 0; whichCard < game.numCards; whichCard += 1) {
          if (whichCard === game.playerCard) {
@@ -168,10 +168,10 @@ document.addEventListener('DOMContentLoaded', function () {
       playerClaimFuncs = [];
 
       for (whichCard = 0; whichCard < game.numCards; whichCard += 1) {
-         playerHandCards.push(document.getElementById('player-hand-' + (whichCard + 1)));
-         playerClaimCards.push(document.getElementById('player-claim-' + (whichCard + 1)));
-         opponentClaimCards.push(document.getElementById('opponent-claim-' + (whichCard + 1)));
-         opponentHandCards.push(document.getElementById('opponent-hand-' + (whichCard + 1)));
+         playerHandCards.push(document.querySelector('#player-hand-' + (whichCard + 1)));
+         playerClaimCards.push(document.querySelector('#player-claim-' + (whichCard + 1)));
+         opponentClaimCards.push(document.querySelector('#opponent-claim-' + (whichCard + 1)));
+         opponentHandCards.push(document.querySelector('#opponent-hand-' + (whichCard + 1)));
       }
       playerClaimCards.forEach(function (element, whichCard) {
          playerClaimFuncs.push(createPlayerClaimFunc(whichCard));
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
          }, false);
       });
 
-      document.getElementById('start-next-hand').addEventListener('click', startNewHand, false);
+      document.querySelector('#start-next-hand').addEventListener('click', startNewHand, false);
 
       document.addEventListener('keypress', function (ev) {
          var card, key, specialStrategies;
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
          }
       }, false);
 
-      historyCanvas = document.getElementById('score-history');
+      historyCanvas = document.querySelector('#score-history');
       historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
 
       if (!game.hasOwnProperty('playerCard')) { // if starting new history from scratch
