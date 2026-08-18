@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
    var chooseOpponentClaim, game, historyCanvas, historyContext, playerClaimCards, playerHandCards, opponentClaimCards, opponentHandCards, saveGame, startNewHand, updateGameboard;
 
    saveGame = function () {
-      if (!localStorage) {
+      try {
+         localStorage.setItem('liarsCardGame', JSON.stringify(game));
+         return true;
+      } catch (ex) {
          return false;
       }
-      localStorage.liarsCardGame = JSON.stringify(game);
-      return true;
    };
 
    updateGameboard = function () {
