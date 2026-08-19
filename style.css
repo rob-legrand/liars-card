@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url(/fonts/fonts.css);
+
 body {
    background-color: #f5fff5;
    font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
