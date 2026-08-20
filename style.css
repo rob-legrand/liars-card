@@ -2,6 +2,13 @@
 
 @import url(/fonts/fonts.css);
 
+:root {
+   --sans-serif: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   --serif:
+      "Kingthings Calligraphica Light", "Palatino Linotype",
+      "Book Antiqua", Georgia, Palatino, Garamond, serif;
+}
+
 body {
    background-color: #f5fff5;
    font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
