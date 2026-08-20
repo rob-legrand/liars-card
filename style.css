@@ -11,13 +11,13 @@
 
 body {
    background-color: #f5fff5;
-   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-family: var(--sans-serif);
    text-align: center;
 }
 
 h1 {
    color: #660066;
-   font-family: "Kingthings Calligraphica Light", "Palatino Linotype", "Book Antiqua", Georgia, Palatino, Garamond, serif;
+   font-family: var(--serif);
    font-size: 300%;
    font-weight: normal;
 }
@@ -25,7 +25,7 @@ h1 {
 .card {
    border: 3px #000000 solid;
    display: inline-block;
-   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-family: var(--sans-serif);
    font-size: 36px;
    height: 48px;
    margin: 3px;
@@ -85,7 +85,7 @@ h1 {
 
 #score {
    color: #663366;
-   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-family: var(--sans-serif);
    font-size: 36px;
 }
 
@@ -95,7 +95,7 @@ h1 {
    color: #ffffff;
    cursor: pointer;
    display: inline-block;
-   font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+   font-family: var(--sans-serif);
    font-size: 24px;
    margin: 24px;
    padding: 6px;
