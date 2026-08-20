@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    var chooseOpponentClaim, game, historyCanvas, historyContext, playerClaimCards, playerHandCards, opponentClaimCards, opponentHandCards, saveGame, startNewHand, updateGameboard;
 
+   const localStorageKey = 'liarsCardGame';
+
    saveGame = function () {
       try {
-         localStorage.setItem('liarsCardGame', JSON.stringify(game));
+         localStorage.setItem(localStorageKey, JSON.stringify(game));
          return true;
       } catch (ex) {
          return false;
@@ -136,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       getGameFromStorage = function () {
          try {
-            return JSON.parse(localStorage.getItem('liarsCardGame') || '');
+            return JSON.parse(localStorage.getItem(localStorageKey) || '');
          } catch (ex) {
             return {
                score: 0,
@@ -210,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card = key.charCodeAt(0) - '1'.charCodeAt(0);
          }
          if (key === '!') {
-            localStorage.removeItem('liarsCardGame');
+            localStorage.removeItem(localStorageKey);
             game = getGameFromStorage();
             startNewHand();
          } else if (game.hasOwnProperty('opponentClaim')) {
