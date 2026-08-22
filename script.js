@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    let game;
-   var chooseOpponentClaim, historyCanvas, historyContext, playerClaimCards, playerHandCards, opponentClaimCards, opponentHandCards, saveGame, startNewHand, updateGameboard;
+   var chooseOpponentClaim, historyCanvas, historyContext, playerClaimCards, opponentClaimCards, opponentHandCards, saveGame, startNewHand, updateGameboard;
 
    const localStorageKey = 'liarsCardGame';
 
@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    };
    game = getGameFromStorage();
+
+   const playerHandCards = Array.from(
+      {length: game.numCards},
+      (ignore, whichCard) => document.querySelector(
+         '#player-hand-' + (whichCard + 1)
+      )
+   );
 
    saveGame = function () {
       try {
@@ -174,14 +181,12 @@ document.addEventListener('DOMContentLoaded', function () {
          };
       };
 
-      playerHandCards = [];
       playerClaimCards = [];
       opponentClaimCards = [];
       opponentHandCards = [];
       playerClaimFuncs = [];
 
       for (whichCard = 0; whichCard < game.numCards; whichCard += 1) {
-         playerHandCards.push(document.querySelector('#player-hand-' + (whichCard + 1)));
          playerClaimCards.push(document.querySelector('#player-claim-' + (whichCard + 1)));
          opponentClaimCards.push(document.querySelector('#opponent-claim-' + (whichCard + 1)));
          opponentHandCards.push(document.querySelector('#opponent-hand-' + (whichCard + 1)));
