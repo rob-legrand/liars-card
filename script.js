@@ -194,13 +194,13 @@ document.addEventListener('DOMContentLoaded', function () {
    };
 
    playerClaimCards.forEach(function (element, whichCard) {
-      element.addEventListener('click', playerClaimFuncs[whichCard], false);
+      element.addEventListener('click', playerClaimFuncs[whichCard]);
       element.addEventListener('mousedown', function (ev) {
          ev.preventDefault();
-      }, false);
+      });
    });
 
-   document.querySelector('#start-next-hand').addEventListener('click', startNewHand, false);
+   document.querySelector('#start-next-hand').addEventListener('click', startNewHand);
 
    document.addEventListener('keypress', function (ev) {
       var card, key, specialStrategies;
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else if (card >= 0 && card < game.numCards) {
          playerClaimFuncs[card]();
       }
-   }, false);
+   });
 
    historyCanvas = document.querySelector('#score-history');
    historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
@@ -237,4 +237,4 @@ document.addEventListener('DOMContentLoaded', function () {
    } else {
       updateGameboard();
    }
-}, false);
+});
