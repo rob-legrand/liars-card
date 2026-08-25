@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
    const playerClaimFuncs = playerHandCards.map(
       (ignore, whichCard) => function () {
-         if (game.hasOwnProperty('playerCard') && !game.hasOwnProperty('playerClaim')) {
+         if (Object.hasOwn(game, 'playerCard') && !Object.hasOwn(game, 'playerClaim')) {
             game.playerClaim = whichCard;
             game.opponentClaim = chooseOpponentClaim(game.opponentCard);
             if (game.playerClaim > game.opponentClaim) {
@@ -85,14 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
          document.querySelector('#score').innerHTML = '0';
       }
-      if (game.hasOwnProperty('playerCard')) {
+      if (Object.hasOwn(game, 'playerCard')) {
          document.querySelector('#player-hand').classList.add('visible');
          document.querySelector('#player-claim').classList.add('visible');
       } else {
          document.querySelector('#player-hand').classList.remove('visible');
          document.querySelector('#player-claim').classList.remove('visible');
       }
-      if (game.hasOwnProperty('opponentClaim')) {
+      if (Object.hasOwn(game, 'opponentClaim')) {
          document.querySelector('#claim-instructions').innerHTML = 'You have claimed:';
          document.querySelector('#player-claim').classList.remove('selectable');
          document.querySelector('#opponent-claim').classList.add('visible');
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
          localStorage.removeItem(localStorageKey);
          game = getGameFromStorage();
          startNewHand();
-      } else if (game.hasOwnProperty('opponentClaim')) {
+      } else if (Object.hasOwn(game, 'opponentClaim')) {
          startNewHand();
       } else if (card >= 0 && card < game.numCards) {
          playerClaimFuncs[card]();
@@ -232,9 +232,9 @@ document.addEventListener('DOMContentLoaded', function () {
    historyCanvas = document.querySelector('#score-history');
    historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
 
-   if (!game.hasOwnProperty('playerCard')) { // if starting new history from scratch
-      startNewHand();
-   } else {
+   if (Object.hasOwn(game, 'playerCard')) {
       updateGameboard();
+   } else { // starting new history from scratch
+      startNewHand();
    }
 });
