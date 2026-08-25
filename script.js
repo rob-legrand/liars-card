@@ -193,51 +193,48 @@ document.addEventListener('DOMContentLoaded', function () {
       return claim;
    };
 
-   (function () {
-
-      playerClaimCards.forEach(function (element, whichCard) {
-         element.addEventListener('click', playerClaimFuncs[whichCard], false);
-         element.addEventListener('mousedown', function (ev) {
-            ev.preventDefault();
-         }, false);
-      });
-
-      document.querySelector('#start-next-hand').addEventListener('click', startNewHand, false);
-
-      document.addEventListener('keypress', function (ev) {
-         var card, key, specialStrategies;
-         key = (ev.key || String.fromCharCode(ev.charCode)).toLowerCase();
-         specialStrategies = {
-            a: [3, 3, 3, 3], // always aggressively all-in
-            c: [0, 0, 0, 3], // conservative: bet only when can't lose
-            h: [0, 1, 2, 3], // honest
-            s: [1, 0, 0, 3], // best strategy against default AI ("sneaky")
-            w: [3, 3, 2, 0], // worst strategy against default AI
-            z: [0, 0, 3, 3]  // all-in when likely to win a showdown
-         };
-         if (specialStrategies[key]) {
-            card = specialStrategies[key][game.playerCard];
-         } else {
-            card = key.charCodeAt(0) - '1'.charCodeAt(0);
-         }
-         if (key === '!') {
-            localStorage.removeItem(localStorageKey);
-            game = getGameFromStorage();
-            startNewHand();
-         } else if (game.hasOwnProperty('opponentClaim')) {
-            startNewHand();
-         } else if (card >= 0 && card < game.numCards) {
-            playerClaimFuncs[card]();
-         }
+   playerClaimCards.forEach(function (element, whichCard) {
+      element.addEventListener('click', playerClaimFuncs[whichCard], false);
+      element.addEventListener('mousedown', function (ev) {
+         ev.preventDefault();
       }, false);
+   });
 
-      historyCanvas = document.querySelector('#score-history');
-      historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
+   document.querySelector('#start-next-hand').addEventListener('click', startNewHand, false);
 
-      if (!game.hasOwnProperty('playerCard')) { // if starting new history from scratch
-         startNewHand();
+   document.addEventListener('keypress', function (ev) {
+      var card, key, specialStrategies;
+      key = (ev.key || String.fromCharCode(ev.charCode)).toLowerCase();
+      specialStrategies = {
+         a: [3, 3, 3, 3], // always aggressively all-in
+         c: [0, 0, 0, 3], // conservative: bet only when can't lose
+         h: [0, 1, 2, 3], // honest
+         s: [1, 0, 0, 3], // best strategy against default AI ("sneaky")
+         w: [3, 3, 2, 0], // worst strategy against default AI
+         z: [0, 0, 3, 3]  // all-in when likely to win a showdown
+      };
+      if (specialStrategies[key]) {
+         card = specialStrategies[key][game.playerCard];
       } else {
-         updateGameboard();
+         card = key.charCodeAt(0) - '1'.charCodeAt(0);
       }
-   }());
+      if (key === '!') {
+         localStorage.removeItem(localStorageKey);
+         game = getGameFromStorage();
+         startNewHand();
+      } else if (game.hasOwnProperty('opponentClaim')) {
+         startNewHand();
+      } else if (card >= 0 && card < game.numCards) {
+         playerClaimFuncs[card]();
+      }
+   }, false);
+
+   historyCanvas = document.querySelector('#score-history');
+   historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
+
+   if (!game.hasOwnProperty('playerCard')) { // if starting new history from scratch
+      startNewHand();
+   } else {
+      updateGameboard();
+   }
 }, false);
