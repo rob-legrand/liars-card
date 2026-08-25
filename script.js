@@ -45,6 +45,27 @@ document.addEventListener('DOMContentLoaded', function () {
       )
    );
 
+   const playerClaimFuncs = playerHandCards.map(
+      (ignore, whichCard) => function () {
+         if (game.hasOwnProperty('playerCard') && !game.hasOwnProperty('playerClaim')) {
+            game.playerClaim = whichCard;
+            game.opponentClaim = chooseOpponentClaim(game.opponentCard);
+            if (game.playerClaim > game.opponentClaim) {
+               game.scoreChange = game.opponentClaim + 1;
+            } else if (game.playerClaim < game.opponentClaim) {
+               game.scoreChange = -game.playerClaim - 1;
+            } else if (game.playerCard > game.opponentCard) {
+               game.scoreChange = game.opponentClaim + 1;
+            } else if (game.playerCard < game.opponentCard) {
+               game.scoreChange = -game.playerClaim - 1;
+            } else {
+               game.scoreChange = 0;
+            }
+            updateGameboard();
+         }
+      }
+   );
+
    saveGame = function () {
       try {
          localStorage.setItem(localStorageKey, JSON.stringify(game));
@@ -173,33 +194,8 @@ document.addEventListener('DOMContentLoaded', function () {
    };
 
    (function () {
-      var createPlayerClaimFunc, playerClaimFuncs, whichCard;
-
-      createPlayerClaimFunc = function (card) {
-         return function () {
-            if (game.hasOwnProperty('playerCard') && !game.hasOwnProperty('playerClaim')) {
-               game.playerClaim = card;
-               game.opponentClaim = chooseOpponentClaim(game.opponentCard);
-               if (game.playerClaim > game.opponentClaim) {
-                  game.scoreChange = game.opponentClaim + 1;
-               } else if (game.playerClaim < game.opponentClaim) {
-                  game.scoreChange = -game.playerClaim - 1;
-               } else if (game.playerCard > game.opponentCard) {
-                  game.scoreChange = game.opponentClaim + 1;
-               } else if (game.playerCard < game.opponentCard) {
-                  game.scoreChange = -game.playerClaim - 1;
-               } else {
-                  game.scoreChange = 0;
-               }
-               updateGameboard();
-            }
-         };
-      };
-
-      playerClaimFuncs = [];
 
       playerClaimCards.forEach(function (element, whichCard) {
-         playerClaimFuncs.push(createPlayerClaimFunc(whichCard));
          element.addEventListener('click', playerClaimFuncs[whichCard], false);
          element.addEventListener('mousedown', function (ev) {
             ev.preventDefault();
