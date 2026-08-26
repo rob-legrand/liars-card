@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
    var chooseOpponentClaim, saveGame, startNewHand, updateGameboard;
 
    const historyCanvas = document.querySelector('#score-history');
-   const historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
+   const historyContext = historyCanvas?.getContext?.('2d');
    const localStorageKey = 'liarsCardGame';
 
    const getGameFromStorage = function () {
