@@ -3,8 +3,10 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    let game;
-   var chooseOpponentClaim, historyCanvas, historyContext, saveGame, startNewHand, updateGameboard;
+   var chooseOpponentClaim, saveGame, startNewHand, updateGameboard;
 
+   const historyCanvas = document.querySelector('#score-history');
+   const historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
    const localStorageKey = 'liarsCardGame';
 
    const getGameFromStorage = function () {
@@ -228,9 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
          playerClaimFuncs[card]();
       }
    });
-
-   historyCanvas = document.querySelector('#score-history');
-   historyContext = historyCanvas && historyCanvas.getContext && historyCanvas.getContext('2d');
 
    if (Object.hasOwn(game, 'playerCard')) {
       updateGameboard();
