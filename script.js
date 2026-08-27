@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
    document.querySelector('#start-next-hand').addEventListener('click', startNewHand);
 
    document.addEventListener('keypress', function (ev) {
-      var card, key, specialStrategies;
+      var key, specialStrategies;
       key = (ev.key || String.fromCharCode(ev.charCode)).toLowerCase();
       specialStrategies = {
          a: [3, 3, 3, 3], // always aggressively all-in
@@ -215,11 +215,11 @@ document.addEventListener('DOMContentLoaded', function () {
          w: [3, 3, 2, 0], // worst strategy against default AI
          z: [0, 0, 3, 3]  // all-in when likely to win a showdown
       };
-      if (specialStrategies[key]) {
-         card = specialStrategies[key][game.playerCard];
-      } else {
-         card = key.charCodeAt(0) - '1'.charCodeAt(0);
-      }
+      const card = (
+         Object.hasOwn(specialStrategies, key)
+         ? specialStrategies[key][game.playerCard]
+         : key.charCodeAt(0) - '1'.charCodeAt(0)
+      );
       if (key === '!') {
          localStorage.removeItem(localStorageKey);
          game = getGameFromStorage();
