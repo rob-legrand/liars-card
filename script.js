@@ -215,9 +215,8 @@ document.addEventListener('DOMContentLoaded', function () {
       };
       const key = (ev.key ?? String.fromCharCode(ev.charCode))?.toLowerCase?.();
       const card = (
-         Object.hasOwn(specialStrategies, key)
-         ? specialStrategies[key][game.playerCard]
-         : key.charCodeAt(0) - '1'.charCodeAt(0)
+         specialStrategies[key]?.[game.playerCard]
+         ?? key.charCodeAt(0) - '1'.charCodeAt(0)
       );
       if (key === '!') {
          localStorage.removeItem(localStorageKey);
