@@ -205,8 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
    document.querySelector('#start-next-hand').addEventListener('click', startNewHand);
 
    document.addEventListener('keypress', function (ev) {
-      var key, specialStrategies;
-      key = (ev.key || String.fromCharCode(ev.charCode)).toLowerCase();
+      var specialStrategies;
       specialStrategies = {
          a: [3, 3, 3, 3], // always aggressively all-in
          c: [0, 0, 0, 3], // conservative: bet only when can't lose
@@ -215,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
          w: [3, 3, 2, 0], // worst strategy against default AI
          z: [0, 0, 3, 3]  // all-in when likely to win a showdown
       };
+      const key = (ev.key ?? String.fromCharCode(ev.charCode))?.toLowerCase?.();
       const card = (
          Object.hasOwn(specialStrategies, key)
          ? specialStrategies[key][game.playerCard]
