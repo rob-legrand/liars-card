@@ -205,8 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
    document.querySelector('#start-next-hand').addEventListener('click', startNewHand);
 
    document.addEventListener('keypress', function (ev) {
-      var specialStrategies;
-      specialStrategies = {
+      const specialStrategies = {
          a: [3, 3, 3, 3], // always aggressively all-in
          c: [0, 0, 0, 3], // conservative: bet only when can't lose
          h: [0, 1, 2, 3], // honest
