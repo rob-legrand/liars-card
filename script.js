@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    let game;
-   var chooseOpponentClaim, saveGame, startNewHand, updateGameboard;
+   var saveGame, startNewHand, updateGameboard;
 
    const historyCanvas = document.querySelector('#score-history');
    const historyContext = historyCanvas?.getContext?.('2d');
@@ -46,6 +46,28 @@ document.addEventListener('DOMContentLoaded', function () {
          '#opponent-hand-' + (whichCard + 1)
       )
    );
+
+   // evolved defensive strategy
+   const chooseOpponentClaim = function (card) {
+      var allInProbs, claim;
+      allInProbs = [0.3, 0.1, 0.9, 1.0];
+      claim = 0;
+      if (card >= 0 && card < game.numCards) {
+         while (claim < game.numCards - 1 && Math.random() < allInProbs[card]) {
+            claim += 1;
+         }
+      }
+      return claim;
+   };
+
+   // "minimax" strategy found by hill-climbing
+// const chooseOpponentClaim = (card) => (
+//    card >= 2
+//    ? game.numCards - 1
+//    : Math.random() * 3 < 2
+//    ? 0
+//    : 1
+// );
 
    const playerClaimFuncs = playerHandCards.map(
       (ignore, whichCard) => function () {
@@ -171,28 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
       delete game.opponentClaim;
       game.opponentCard = Math.floor(Math.random() * game.numCards);
       updateGameboard();
-   };
-
-   // "minimax" strategy found by hill-climbing
-   chooseOpponentClaim = (card) => (
-      card >= 3
-      ? game.numCards - 1
-      : Math.random() * 3 < 2
-      ? 0
-      : 1
-   );
-
-   // evolved defensive strategy
-   chooseOpponentClaim = function (card) {
-      var allInProbs, claim;
-      allInProbs = [0.3, 0.1, 0.9, 1.0];
-      claim = 0;
-      if (card >= 0 && card < game.numCards) {
-         while (claim < game.numCards - 1 && Math.random() < allInProbs[card]) {
-            claim += 1;
-         }
-      }
-      return claim;
    };
 
    playerClaimCards.forEach(function (element, whichCard) {
