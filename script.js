@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // evolved defensive strategy
    const chooseOpponentClaim = function (card) {
-      var allInProbs, claim;
-      allInProbs = [0.3, 0.1, 0.9, 1.0];
+      let claim;
+      const allInProbs = [0.3, 0.1, 0.9, 1.0];
       claim = 0;
       if (card >= 0 && card < game.numCards) {
          while (claim < game.numCards - 1 && Math.random() < allInProbs[card]) {
