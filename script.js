@@ -143,32 +143,16 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#result-section').classList.remove('visible');
       }
       playerHandCards.forEach(function (playerHandCard, whichCard) {
-         if (whichCard === game.playerCard) {
-            playerHandCard.classList.remove('hidden');
-         } else {
-            playerHandCard.classList.add('hidden');
-         }
+         playerHandCard.classList.toggle('hidden', whichCard !== game.playerCard);
       });
       playerClaimCards.forEach(function (playerClaimCard, whichCard) {
-         if (whichCard === game.playerClaim) {
-            playerClaimCard.classList.add('selected');
-         } else {
-            playerClaimCard.classList.remove('selected');
-         }
+         playerClaimCard.classList.toggle('selected', whichCard === game.playerClaim);
       });
       opponentClaimCards.forEach(function (opponentClaimCard, whichCard) {
-         if (whichCard === game.opponentClaim) {
-            opponentClaimCard.classList.add('selected');
-         } else {
-            opponentClaimCard.classList.remove('selected');
-         }
+         opponentClaimCard.classList.toggle('selected', whichCard === game.opponentClaim);
       });
       opponentHandCards.forEach(function (opponentHandCard, whichCard) {
-         if (whichCard === game.opponentCard) {
-            opponentHandCard.classList.remove('hidden');
-         } else {
-            opponentHandCard.classList.add('hidden');
-         }
+         opponentHandCard.classList.toggle('hidden', whichCard !== game.opponentCard);
       });
       if (historyContext) {
          historyCanvas.width = game.scoreHistory.length;
