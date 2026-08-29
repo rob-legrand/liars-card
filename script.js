@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
    };
 
    updateGameboard = function () {
-      var whichCard, whichScore;
+      var whichScore;
       document.querySelector('#score-section').classList.add('visible');
       if (game.score > 0) {
          document.querySelector('#score').innerHTML = '+' + game.score;
@@ -142,28 +142,34 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#opponent-hand').classList.remove('visible');
          document.querySelector('#result-section').classList.remove('visible');
       }
-      for (whichCard = 0; whichCard < game.numCards; whichCard += 1) {
+      playerHandCards.forEach(function (playerHandCard, whichCard) {
          if (whichCard === game.playerCard) {
-            playerHandCards[whichCard].classList.remove('hidden');
+            playerHandCard.classList.remove('hidden');
          } else {
-            playerHandCards[whichCard].classList.add('hidden');
+            playerHandCard.classList.add('hidden');
          }
+      });
+      playerClaimCards.forEach(function (playerClaimCard, whichCard) {
          if (whichCard === game.playerClaim) {
-            playerClaimCards[whichCard].classList.add('selected');
+            playerClaimCard.classList.add('selected');
          } else {
-            playerClaimCards[whichCard].classList.remove('selected');
+            playerClaimCard.classList.remove('selected');
          }
+      });
+      opponentClaimCards.forEach(function (opponentClaimCard, whichCard) {
          if (whichCard === game.opponentClaim) {
-            opponentClaimCards[whichCard].classList.add('selected');
+            opponentClaimCard.classList.add('selected');
          } else {
-            opponentClaimCards[whichCard].classList.remove('selected');
+            opponentClaimCard.classList.remove('selected');
          }
+      });
+      opponentHandCards.forEach(function (opponentHandCard, whichCard) {
          if (whichCard === game.opponentCard) {
-            opponentHandCards[whichCard].classList.remove('hidden');
+            opponentHandCard.classList.remove('hidden');
          } else {
-            opponentHandCards[whichCard].classList.add('hidden');
+            opponentHandCard.classList.add('hidden');
          }
-      }
+      });
       if (historyContext) {
          historyCanvas.width = game.scoreHistory.length;
          historyCanvas.height = game.highestScore - game.lowestScore + 1;
