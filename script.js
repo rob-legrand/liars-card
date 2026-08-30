@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
    };
 
    updateGameboard = function () {
-      var whichScore;
       document.querySelector('#score-section').classList.add('visible');
       if (game.score > 0) {
          document.querySelector('#score').innerHTML = '+' + game.score;
@@ -162,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function () {
          historyContext.fillStyle = '#cccccc';
          historyContext.fillRect(0, game.highestScore, historyCanvas.width, 1);
          historyContext.fillStyle = '#000000';
-         for (whichScore = 0; whichScore < game.scoreHistory.length; whichScore += 1) {
-            historyContext.fillRect(whichScore, game.highestScore - game.scoreHistory[whichScore], 1, 1);
-         }
+         game.scoreHistory.forEach(function (score, whichScore) {
+            historyContext.fillRect(whichScore, game.highestScore - score, 1, 1);
+         });
       }
       saveGame();
    };
