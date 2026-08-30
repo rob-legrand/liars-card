@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    let game;
-   var saveGame, startNewHand, updateGameboard;
+   var saveGame, updateGameboard;
 
    const historyCanvas = document.querySelector('#score-history');
    const historyContext = historyCanvas?.getContext?.('2d');
@@ -168,15 +168,11 @@ document.addEventListener('DOMContentLoaded', function () {
       saveGame();
    };
 
-   startNewHand = function () {
+   const startNewHand = function () {
       game.score += game.scoreChange;
-      game.scoreHistory.push(game.score);
-      if (game.score < game.lowestScore) {
-         game.lowestScore = game.score;
-      }
-      if (game.score > game.highestScore) {
-         game.highestScore = game.score;
-      }
+      game.scoreHistory = [...game.scoreHistory, game.score];
+      game.lowestScore = Math.min(game.lowestScore, game.score);
+      game.highestScore = Math.max(game.highestScore, game.score);
       game.playerCard = Math.floor(Math.random() * game.numCards);
       delete game.playerClaim;
       delete game.opponentClaim;
