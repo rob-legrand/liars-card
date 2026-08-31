@@ -102,11 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
    updateGameboard = function () {
       document.querySelector('#score-section').classList.add('visible');
       if (game.score > 0) {
-         document.querySelector('#score').innerHTML = '+' + game.score;
+         document.querySelector('#score').textContent = '+' + game.score;
       } else if (game.score < 0) {
-         document.querySelector('#score').innerHTML = '&minus;' + -game.score;
+         document.querySelector('#score').textContent = '\u{2212}' + -game.score;
       } else {
-         document.querySelector('#score').innerHTML = '0';
+         document.querySelector('#score').textContent = '0';
       }
       if (Object.hasOwn(game, 'playerCard')) {
          document.querySelector('#player-hand').classList.add('visible');
@@ -116,26 +116,26 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#player-claim').classList.remove('visible');
       }
       if (Object.hasOwn(game, 'opponentClaim')) {
-         document.querySelector('#claim-instructions').innerHTML = 'You have claimed:';
+         document.querySelector('#claim-instructions').textContent = 'You have claimed:';
          document.querySelector('#player-claim').classList.remove('selectable');
          document.querySelector('#opponent-claim').classList.add('visible');
          document.querySelector('#opponent-hand').classList.add('visible');
          if (game.playerClaim > game.opponentClaim) {
             document.querySelector('#opponent-hand').classList.remove('visible');
-            document.querySelector('#result').innerHTML = 'Your claim is higher.&nbsp; You win your opponent&rsquo;s claim (+' + game.scoreChange + ').';
+            document.querySelector('#result').textContent = 'Your claim is higher.\u{00a0} You win your opponent\u{2019}s claim (+' + game.scoreChange + ').';
          } else if (game.playerClaim < game.opponentClaim) {
             document.querySelector('#opponent-hand').classList.remove('visible');
-            document.querySelector('#result').innerHTML = 'Your opponent&rsquo;s claim is higher.&nbsp; You lose your claim (&minus;' + -game.scoreChange + ').';
+            document.querySelector('#result').textContent = 'Your opponent\u{2019}s claim is higher.\u{00a0} You lose your claim (\u{2212}' + -game.scoreChange + ').';
          } else if (game.playerCard > game.opponentCard) {
-            document.querySelector('#result').innerHTML = 'The claims are equal; your card is higher.&nbsp; You win your opponent&rsquo;s claim (+' + game.scoreChange + ').';
+            document.querySelector('#result').textContent = 'The claims are equal; your card is higher.\u{00a0} You win your opponent\u{2019}s claim (+' + game.scoreChange + ').';
          } else if (game.playerCard < game.opponentCard) {
-            document.querySelector('#result').innerHTML = 'The claims are equal; your opponent&rsquo;s card is higher.&nbsp; You lose your claim (&minus;' + -game.scoreChange + ').';
+            document.querySelector('#result').textContent = 'The claims are equal; your opponent\u{2019}s card is higher.\u{00a0} You lose your claim (\u{2212}' + -game.scoreChange + ').';
          } else {
-            document.querySelector('#result').innerHTML = 'The claims are equal; the cards are equal (0).';
+            document.querySelector('#result').textContent = 'The claims are equal; the cards are equal (0).';
          }
          document.querySelector('#result-section').classList.add('visible');
       } else {
-         document.querySelector('#claim-instructions').innerHTML = 'Choose card to claim you have:';
+         document.querySelector('#claim-instructions').textContent = 'Choose card to claim you have:';
          document.querySelector('#player-claim').classList.add('selectable');
          document.querySelector('#opponent-claim').classList.remove('visible');
          document.querySelector('#opponent-hand').classList.remove('visible');
