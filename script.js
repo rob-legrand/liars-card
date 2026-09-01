@@ -108,13 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
          ? '\u{2212}' + -game.score
          : '0'
       );
-      if (Object.hasOwn(game, 'playerCard')) {
-         document.querySelector('#player-hand').classList.add('visible');
-         document.querySelector('#player-claim').classList.add('visible');
-      } else {
-         document.querySelector('#player-hand').classList.remove('visible');
-         document.querySelector('#player-claim').classList.remove('visible');
-      }
+      document.querySelector('#player-hand').classList.toggle('visible', Object.hasOwn(game, 'playerCard'));
+      document.querySelector('#player-claim').classList.toggle('visible', Object.hasOwn(game, 'playerCard'));
       if (Object.hasOwn(game, 'opponentClaim')) {
          document.querySelector('#claim-instructions').textContent = 'You have claimed:';
          document.querySelector('#player-claim').classList.remove('selectable');
