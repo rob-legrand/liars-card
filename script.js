@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
    updateGameboard = function () {
       document.querySelector('#score-section').classList.add('visible');
-      if (game.score > 0) {
-         document.querySelector('#score').textContent = '+' + game.score;
-      } else if (game.score < 0) {
-         document.querySelector('#score').textContent = '\u{2212}' + -game.score;
-      } else {
-         document.querySelector('#score').textContent = '0';
-      }
+      document.querySelector('#score').textContent = (
+         game.score > 0
+         ? '+' + game.score
+         : game.score < 0
+         ? '\u{2212}' + -game.score
+         : '0'
+      );
       if (Object.hasOwn(game, 'playerCard')) {
          document.querySelector('#player-hand').classList.add('visible');
          document.querySelector('#player-claim').classList.add('visible');
