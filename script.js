@@ -114,12 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#claim-instructions').textContent = 'You have claimed:';
          document.querySelector('#player-claim').classList.remove('selectable');
          document.querySelector('#opponent-claim').classList.add('visible');
-         document.querySelector('#opponent-hand').classList.add('visible');
+         document.querySelector('#opponent-hand').classList.toggle('visible', game.playerClaim === game.opponentClaim);
          if (game.playerClaim > game.opponentClaim) {
-            document.querySelector('#opponent-hand').classList.remove('visible');
             document.querySelector('#result').textContent = 'Your claim is higher.\u{00a0} You win your opponent\u{2019}s claim (+' + game.scoreChange + ').';
          } else if (game.playerClaim < game.opponentClaim) {
-            document.querySelector('#opponent-hand').classList.remove('visible');
             document.querySelector('#result').textContent = 'Your opponent\u{2019}s claim is higher.\u{00a0} You lose your claim (\u{2212}' + -game.scoreChange + ').';
          } else if (game.playerCard > game.opponentCard) {
             document.querySelector('#result').textContent = 'The claims are equal; your card is higher.\u{00a0} You win your opponent\u{2019}s claim (+' + game.scoreChange + ').';
