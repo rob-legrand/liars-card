@@ -117,25 +117,17 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#opponent-hand').classList.toggle('visible', game.playerClaim === game.opponentClaim);
          document.querySelector('#result').textContent = (
             game.playerClaim > game.opponentClaim
-            ? (
-               'Your claim is higher.\u{00a0} '
-               + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
-            )
+            ? 'Your claim is higher.\u{00a0} '
+            + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
             : game.playerClaim < game.opponentClaim
-            ? (
-               'Your opponent\u{2019}s claim is higher.\u{00a0} '
-               + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
-            )
+            ? 'Your opponent\u{2019}s claim is higher.\u{00a0} '
+            + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
             : game.playerCard > game.opponentCard
-            ? (
-               'The claims are equal; your card is higher.\u{00a0} '
-               + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
-            )
+            ? 'The claims are equal; your card is higher.\u{00a0} '
+            + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
             : game.playerCard < game.opponentCard
-            ? (
-               'The claims are equal; your opponent\u{2019}s card is higher.\u{00a0} '
-               + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
-            )
+            ? 'The claims are equal; your opponent\u{2019}s card is higher.\u{00a0} '
+            + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
             : 'The claims are equal; the cards are equal (0).'
          );
          document.querySelector('#result-section').classList.add('visible');
