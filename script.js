@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#player-claim').classList.add('selectable');
          document.querySelector('#opponent-claim').classList.remove('visible');
          document.querySelector('#opponent-hand').classList.remove('visible');
+         document.querySelector('#result').textContent = '\u{00a0}';
          document.querySelector('#result-section').classList.remove('visible');
       }
       playerHandCards.forEach(function (playerHandCard, whichCard) {
