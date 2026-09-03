@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    let game;
-   var updateGameboard;
 
    const historyCanvas = document.querySelector('#score-history');
    const historyContext = historyCanvas?.getContext?.('2d');
@@ -78,28 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    };
 
-   const playerClaimFuncs = playerHandCards.map(
-      (ignore, whichCard) => function () {
-         if (Object.hasOwn(game, 'playerCard') && !Object.hasOwn(game, 'playerClaim')) {
-            game.playerClaim = whichCard;
-            game.opponentClaim = chooseOpponentClaim(game.opponentCard);
-            game.scoreChange = (
-               game.playerClaim > game.opponentClaim
-               ? game.opponentClaim + 1
-               : game.playerClaim < game.opponentClaim
-               ? -game.playerClaim - 1
-               : game.playerCard > game.opponentCard
-               ? game.opponentClaim + 1
-               : game.playerCard < game.opponentCard
-               ? -game.playerClaim - 1
-               : 0
-            );
-            updateGameboard();
-         }
-      }
-   );
-
-   updateGameboard = function () {
+   const updateGameboard = function () {
       document.querySelector('#score-section').classList.add('visible');
       document.querySelector('#score').textContent = (
          game.score > 0
@@ -165,6 +143,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       saveGame();
    };
+
+   const playerClaimFuncs = playerHandCards.map(
+      (ignore, whichCard) => function () {
+         if (Object.hasOwn(game, 'playerCard') && !Object.hasOwn(game, 'playerClaim')) {
+            game.playerClaim = whichCard;
+            game.opponentClaim = chooseOpponentClaim(game.opponentCard);
+            game.scoreChange = (
+               game.playerClaim > game.opponentClaim
+               ? game.opponentClaim + 1
+               : game.playerClaim < game.opponentClaim
+               ? -game.playerClaim - 1
+               : game.playerCard > game.opponentCard
+               ? game.opponentClaim + 1
+               : game.playerCard < game.opponentCard
+               ? -game.playerClaim - 1
+               : 0
+            );
+            updateGameboard();
+         }
+      }
+   );
 
    const startNewHand = function () {
       game.score += game.scoreChange;
