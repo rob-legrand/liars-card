@@ -117,16 +117,16 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#opponent-hand').classList.toggle('visible', game.playerClaim === game.opponentClaim);
          document.querySelector('#result').textContent = (
             game.playerClaim > game.opponentClaim
-            ? 'Your claim is higher.\u{00a0} '
+            ? 'Your claim is higher.\u{a0} '
             + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
             : game.playerClaim < game.opponentClaim
-            ? 'Your opponent\u{2019}s claim is higher.\u{00a0} '
+            ? 'Your opponent\u{2019}s claim is higher.\u{a0} '
             + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
             : game.playerCard > game.opponentCard
-            ? 'The claims are equal; your card is higher.\u{00a0} '
+            ? 'The claims are equal; your card is higher.\u{a0} '
             + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
             : game.playerCard < game.opponentCard
-            ? 'The claims are equal; your opponent\u{2019}s card is higher.\u{00a0} '
+            ? 'The claims are equal; your opponent\u{2019}s card is higher.\u{a0} '
             + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
             : 'The claims are equal; the cards are equal (0).'
          );
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('#player-claim').classList.add('selectable');
          document.querySelector('#opponent-claim').classList.remove('visible');
          document.querySelector('#opponent-hand').classList.remove('visible');
-         document.querySelector('#result').textContent = '\u{00a0}';
+         document.querySelector('#result').textContent = '\u{a0}';
          document.querySelector('#result-section').classList.remove('visible');
       }
       playerHandCards.forEach(function (playerHandCard, whichCard) {
