@@ -74,17 +74,17 @@ document.addEventListener('DOMContentLoaded', function () {
          if (Object.hasOwn(game, 'playerCard') && !Object.hasOwn(game, 'playerClaim')) {
             game.playerClaim = whichCard;
             game.opponentClaim = chooseOpponentClaim(game.opponentCard);
-            if (game.playerClaim > game.opponentClaim) {
-               game.scoreChange = game.opponentClaim + 1;
-            } else if (game.playerClaim < game.opponentClaim) {
-               game.scoreChange = -game.playerClaim - 1;
-            } else if (game.playerCard > game.opponentCard) {
-               game.scoreChange = game.opponentClaim + 1;
-            } else if (game.playerCard < game.opponentCard) {
-               game.scoreChange = -game.playerClaim - 1;
-            } else {
-               game.scoreChange = 0;
-            }
+            game.scoreChange = (
+               game.playerClaim > game.opponentClaim
+               ? game.opponentClaim + 1
+               : game.playerClaim < game.opponentClaim
+               ? -game.playerClaim - 1
+               : game.playerCard > game.opponentCard
+               ? game.opponentClaim + 1
+               : game.playerCard < game.opponentCard
+               ? -game.playerClaim - 1
+               : 0
+            );
             updateGameboard();
          }
       }
