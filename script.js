@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    let game;
-   var saveGame, updateGameboard;
+   var updateGameboard;
 
    const historyCanvas = document.querySelector('#score-history');
    const historyContext = historyCanvas?.getContext?.('2d');
@@ -69,6 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
 //    : 1
 // );
 
+   const saveGame = function () {
+      try {
+         localStorage.setItem(localStorageKey, JSON.stringify(game));
+         return true;
+      } catch (ex) {
+         return false;
+      }
+   };
+
    const playerClaimFuncs = playerHandCards.map(
       (ignore, whichCard) => function () {
          if (Object.hasOwn(game, 'playerCard') && !Object.hasOwn(game, 'playerClaim')) {
@@ -89,15 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
          }
       }
    );
-
-   saveGame = function () {
-      try {
-         localStorage.setItem(localStorageKey, JSON.stringify(game));
-         return true;
-      } catch (ex) {
-         return false;
-      }
-   };
 
    updateGameboard = function () {
       document.querySelector('#score-section').classList.add('visible');
