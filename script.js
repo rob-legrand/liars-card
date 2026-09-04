@@ -1,4 +1,4 @@
-/*jslint browser: true, indent: 3 */
+/*jslint browser, maxlen: 100 */
 
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
