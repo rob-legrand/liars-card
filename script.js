@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
          ? '\u{2212}' + -game.score
          : '0'
       );
-      document.querySelector('#player-hand').classList.toggle('visible', Object.hasOwn(game, 'playerCard'));
-      document.querySelector('#player-claim').classList.toggle('visible', Object.hasOwn(game, 'playerCard'));
+      playerHandSection.classList.toggle('visible', Object.hasOwn(game, 'playerCard'));
+      playerClaimSection.classList.toggle('visible', Object.hasOwn(game, 'playerCard'));
       if (Object.hasOwn(game, 'opponentClaim')) {
-         document.querySelector('#claim-instructions').textContent = 'You have claimed:';
-         document.querySelector('#player-claim').classList.remove('selectable');
-         document.querySelector('#opponent-claim').classList.add('visible');
-         document.querySelector('#opponent-hand').classList.toggle('visible', game.playerClaim === game.opponentClaim);
-         document.querySelector('#result').textContent = (
+         claimInstructions.textContent = 'You have claimed:';
+         playerClaimSection.classList.remove('selectable');
+         opponentClaimSection.classList.add('visible');
+         opponentHandSection.classList.toggle('visible', game.playerClaim === game.opponentClaim);
+         resultOutput.textContent = (
             game.playerClaim > game.opponentClaim
             ? 'Your claim is higher.\u{a0} '
             + 'You win your opponent\u{2019}s claim (+' + game.scoreChange + ').'
@@ -115,14 +115,14 @@ document.addEventListener('DOMContentLoaded', function () {
             + 'You lose your claim (\u{2212}' + -game.scoreChange + ').'
             : 'The claims are equal; the cards are equal (0).'
          );
-         document.querySelector('#result-section').classList.add('visible');
+         resultSection.classList.add('visible');
       } else {
-         document.querySelector('#claim-instructions').textContent = 'Choose card to claim you have:';
-         document.querySelector('#player-claim').classList.add('selectable');
-         document.querySelector('#opponent-claim').classList.remove('visible');
-         document.querySelector('#opponent-hand').classList.remove('visible');
-         document.querySelector('#result').textContent = '\u{a0}';
-         document.querySelector('#result-section').classList.remove('visible');
+         claimInstructions.textContent = 'Choose card to claim you have:';
+         playerClaimSection.classList.add('selectable');
+         opponentClaimSection.classList.remove('visible');
+         opponentHandSection.classList.remove('visible');
+         resultOutput.textContent = '\u{a0}';
+         resultSection.classList.remove('visible');
       }
       playerHandCards.forEach(function (playerHandCard, whichCard) {
          playerHandCard.classList.toggle('hidden', whichCard !== game.playerCard);
