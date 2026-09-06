@@ -25,18 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
    game = getGameFromStorage();
 
    const playerHandSection = document.querySelector('#player-hand');
+   const playerHandCards = [...playerHandSection.querySelectorAll('.card')];
    const playerClaimSection = document.querySelector('#player-claim');
    const opponentClaimSection = document.querySelector('#opponent-claim');
    const opponentHandSection = document.querySelector('#opponent-hand');
    const claimInstructions = document.querySelector('#claim-instructions');
    const resultOutput = document.querySelector('#result');
    const resultSection = document.querySelector('#result-section');
-   const playerHandCards = Array.from(
-      {length: game.numCards},
-      (ignore, whichCard) => document.querySelector(
-         '#player-hand-' + (whichCard + 1)
-      )
-   );
    const playerClaimCards = playerHandCards.map(
       (ignore, whichCard) => document.querySelector(
          '#player-claim-' + (whichCard + 1)
