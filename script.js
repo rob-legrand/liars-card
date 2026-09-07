@@ -29,15 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
    const playerClaimSection = document.querySelector('#player-claim');
    const playerClaimCards = [...playerClaimSection.querySelectorAll('.card')];
    const opponentClaimSection = document.querySelector('#opponent-claim');
+   const opponentClaimCards = [...opponentClaimSection.querySelectorAll('.card')];
    const opponentHandSection = document.querySelector('#opponent-hand');
    const claimInstructions = document.querySelector('#claim-instructions');
    const resultOutput = document.querySelector('#result');
    const resultSection = document.querySelector('#result-section');
-   const opponentClaimCards = playerHandCards.map(
-      (ignore, whichCard) => document.querySelector(
-         '#opponent-claim-' + (whichCard + 1)
-      )
-   );
    const opponentHandCards = playerHandCards.map(
       (ignore, whichCard) => document.querySelector(
          '#opponent-hand-' + (whichCard + 1)
