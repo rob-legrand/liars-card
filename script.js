@@ -27,16 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
    const playerHandSection = document.querySelector('#player-hand');
    const playerHandCards = [...playerHandSection.querySelectorAll('.card')];
    const playerClaimSection = document.querySelector('#player-claim');
+   const playerClaimCards = [...playerClaimSection.querySelectorAll('.card')];
    const opponentClaimSection = document.querySelector('#opponent-claim');
    const opponentHandSection = document.querySelector('#opponent-hand');
    const claimInstructions = document.querySelector('#claim-instructions');
    const resultOutput = document.querySelector('#result');
    const resultSection = document.querySelector('#result-section');
-   const playerClaimCards = playerHandCards.map(
-      (ignore, whichCard) => document.querySelector(
-         '#player-claim-' + (whichCard + 1)
-      )
-   );
    const opponentClaimCards = playerHandCards.map(
       (ignore, whichCard) => document.querySelector(
          '#opponent-claim-' + (whichCard + 1)
