@@ -31,14 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
    const opponentClaimSection = document.querySelector('#opponent-claim');
    const opponentClaimCards = [...opponentClaimSection.querySelectorAll('.card')];
    const opponentHandSection = document.querySelector('#opponent-hand');
+   const opponentHandCards = [...opponentHandSection.querySelectorAll('.card')];
    const claimInstructions = document.querySelector('#claim-instructions');
    const resultOutput = document.querySelector('#result');
    const resultSection = document.querySelector('#result-section');
-   const opponentHandCards = playerHandCards.map(
-      (ignore, whichCard) => document.querySelector(
-         '#opponent-hand-' + (whichCard + 1)
-      )
-   );
 
    // evolved defensive strategy
    const chooseOpponentClaim = function (card) {
