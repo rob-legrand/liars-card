@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const getGameFromStorage = function () {
       try {
          return JSON.parse(localStorage.getItem(localStorageKey) || '');
-      } catch (ex) {
+      } catch (ignore) {
          return {
             score: 0,
             scoreChange: 0,
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
          localStorage.setItem(localStorageKey, JSON.stringify(game));
          return true;
-      } catch (ex) {
+      } catch (ignore) {
          return false;
       }
    };
@@ -185,7 +185,8 @@ document.addEventListener('DOMContentLoaded', function () {
          w: [3, 3, 2, 0], // worst strategy against default AI
          z: [0, 0, 3, 3]  // all-in when likely to win a showdown
       };
-      const key = (ev.key ?? String.fromCharCode(ev.charCode))?.toLowerCase?.();
+      const rawKey = ev.key ?? String.fromCharCode(ev.charCode);
+      const key = rawKey?.toLowerCase?.();
       const card = (
          specialStrategies[key]?.[game.playerCard]
          ?? key.charCodeAt(0) - '1'.charCodeAt(0)
