@@ -62,12 +62,12 @@ h1 {
    color: #ffffff;
 }
 
-.gameboard-section {
+.gameboard > div {
    padding: 10px;
    visibility: hidden;
 }
 
-.gameboard-section.visible {
+.gameboard > div.visible {
    visibility: visible;
 }
 
