@@ -42,22 +42,22 @@ h1 {
    border-color: #00cc00;
 }
 
-.card-value-1 {
+.card:nth-child(1) {
    background-color: #663300;
    color: #ffffff;
 }
 
-.card-value-2 {
+.card:nth-child(2) {
    background-color: #443322;
    color: #ffffff;
 }
 
-.card-value-3 {
+.card:nth-child(3) {
    background-color: #223344;
    color: #ffffff;
 }
 
-.card-value-4 {
+.card:nth-child(4) {
    background-color: #003366;
    color: #ffffff;
 }
