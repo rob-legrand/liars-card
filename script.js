@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
    };
    game = getGameFromStorage();
 
+   [...document.querySelectorAll('.cards div')].forEach(function (cardElement) {
+      cardElement.classList.add('card');
+   });
+
    const playerHandSection = document.querySelector('#player-hand');
    const playerHandCards = [...playerHandSection.querySelectorAll('.card')];
    const playerClaimSection = document.querySelector('#player-claim');
