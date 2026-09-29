@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
    game = getGameFromStorage();
 
    [...document.querySelectorAll('.cards')].forEach(function (cardsElement) {
+      cardsElement.replaceChildren(
+         ...Array.from(
+            {length: game.numCards},
+            () => document.createElement('div')
+         )
+      );
       [...cardsElement.querySelectorAll('div')].forEach(function (cardElement, whichCard) {
          cardElement.classList.add('card');
          cardElement.textContent = whichCard + 1;
