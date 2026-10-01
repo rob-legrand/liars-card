@@ -28,7 +28,7 @@ h1 {
    font-family: var(--sans-serif);
    font-size: 36px;
    height: 48px;
-   margin: 3px;
+   margin: 3px 6px;
    padding: 3px;
    text-align: center;
    width: 40px;
