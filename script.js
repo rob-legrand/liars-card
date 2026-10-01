@@ -24,6 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
    };
    game = getGameFromStorage();
 
+   const createElement = function (args) {
+      // Create a new HTML element.
+      const newElement = document.createElement(args?.elementType ?? 'div');
+      // Give it desired attributes.
+      if (typeof args?.attributes === 'object') {
+         Object.entries(args.attributes).forEach(function ([name, value]) {
+            newElement.setAttribute(name, value);
+         });
+      }
+      // Give it desired CSS classes.
+      if (Array.isArray(args?.classList)) {
+         newElement.classList.add(...args.classList);
+      }
+      // Give it desired children: HTML elements or text.
+      if (Array.isArray(args?.children)) {
+         newElement.replaceChildren(...args.children);
+      }
+      return newElement;
+   };
+
    [...document.querySelectorAll('.cards')].forEach(function (cardsElement) {
       cardsElement.replaceChildren(
          ...Array.from(
