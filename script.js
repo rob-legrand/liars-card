@@ -48,12 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
       cardsElement.replaceChildren(
          ...Array.from(
             {length: game.numCards},
-            function (ignore, whichCard) {
-               const cardElement = document.createElement('div');
-               cardElement.classList.add('card');
-               cardElement.textContent = whichCard + 1;
-               return cardElement;
-            }
+            (ignore, whichCard) => createElement({
+               classList: ['card'],
+               children: [whichCard + 1]
+            })
          )
       );
    });
