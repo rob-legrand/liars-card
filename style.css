@@ -23,7 +23,9 @@ h1 {
 }
 
 .card {
-   border: 3px #000000 solid;
+   border-color: #000000;
+   border-style: solid;
+   border-width: 3px;
    display: inline-block;
    font-family: var(--sans-serif);
    font-size: 36px;
@@ -91,7 +93,9 @@ h1 {
 
 #start-next-hand {
    background-color: #553355;
-   border: 3px #000000 solid;
+   border-color: #000000;
+   border-style: solid;
+   border-width: 3px;
    color: #ffffff;
    cursor: pointer;
    display: inline-block;
