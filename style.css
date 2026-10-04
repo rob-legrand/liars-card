@@ -10,13 +10,13 @@
 }
 
 body {
-   background-color: #f5fff5;
+   background-color: rgb(245, 255, 245);
    font-family: var(--sans-serif);
    text-align: center;
 }
 
 h1 {
-   color: #660066;
+   color: rgb(102, 0, 102);
    font-family: var(--serif);
    font-size: 300%;
    font-weight: normal;
@@ -78,15 +78,15 @@ h1 {
 }
 
 .selectable .card:hover {
-   border-color: #660066;
+   border-color: rgb(102, 0, 102);
 }
 
 .selectable .card:active {
-   border-color: #006600;
+   border-color: rgb(0, 102, 0);
 }
 
 #score {
-   color: #663366;
+   color: rgb(102, 51, 102);
    font-family: var(--sans-serif);
    font-size: 36px;
 }
@@ -108,9 +108,9 @@ h1 {
 }
 
 #start-next-hand:hover {
-   border-color: #006600;
+   border-color: rgb(0, 102, 0);
 }
 
 #start-next-hand:active {
-   border-color: #660066;
+   border-color: rgb(102, 0, 102);
 }
