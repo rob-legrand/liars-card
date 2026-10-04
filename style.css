@@ -23,7 +23,7 @@ h1 {
 }
 
 .card {
-   border-color: #000000;
+   border-color: rgb(0, 0, 0);
    border-style: solid;
    border-width: 3px;
    display: inline-block;
@@ -46,22 +46,22 @@ h1 {
 
 .card:nth-child(1) {
    background-color: #663300;
-   color: #ffffff;
+   color: rgb(255, 255, 255);
 }
 
 .card:nth-child(2) {
    background-color: #443322;
-   color: #ffffff;
+   color: rgb(255, 255, 255);
 }
 
 .card:nth-child(3) {
    background-color: #223344;
-   color: #ffffff;
+   color: rgb(255, 255, 255);
 }
 
 .card:nth-child(4) {
    background-color: #003366;
-   color: #ffffff;
+   color: rgb(255, 255, 255);
 }
 
 .gameboard > div {
@@ -93,10 +93,10 @@ h1 {
 
 #start-next-hand {
    background-color: #553355;
-   border-color: #000000;
+   border-color: rgb(0, 0, 0);
    border-style: solid;
    border-width: 3px;
-   color: #ffffff;
+   color: rgb(255, 255, 255);
    cursor: pointer;
    display: inline-block;
    font-family: var(--sans-serif);
