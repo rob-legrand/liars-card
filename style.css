@@ -41,26 +41,26 @@ h1 {
 }
 
 .card.selected {
-   border-color: #00cc00;
+   border-color: rgb(0, 204, 0);
 }
 
 .card:nth-child(1) {
-   background-color: #663300;
+   background-color: rgb(102, 51, 0);
    color: rgb(255, 255, 255);
 }
 
 .card:nth-child(2) {
-   background-color: #443322;
+   background-color: rgb(68, 51, 34);
    color: rgb(255, 255, 255);
 }
 
 .card:nth-child(3) {
-   background-color: #223344;
+   background-color: rgb(34, 51, 68);
    color: rgb(255, 255, 255);
 }
 
 .card:nth-child(4) {
-   background-color: #003366;
+   background-color: rgb(0, 51, 102);
    color: rgb(255, 255, 255);
 }
 
@@ -92,7 +92,7 @@ h1 {
 }
 
 #start-next-hand {
-   background-color: #553355;
+   background-color: rgb(85, 51, 85);
    border-color: rgb(0, 0, 0);
    border-style: solid;
    border-width: 3px;
