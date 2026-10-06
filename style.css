@@ -114,3 +114,6 @@ h1 {
 #start-next-hand:active {
    border-color: rgb(102, 0, 102);
 }
+
+@media screen and (prefers-color-scheme: dark) {
+}
