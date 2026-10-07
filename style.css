@@ -26,6 +26,7 @@ h1 {
    border-color: rgb(0, 0, 0);
    border-style: solid;
    border-width: 3px;
+   color: rgb(255, 255, 255);
    display: inline-block;
    font-family: var(--sans-serif);
    font-size: 36px;
@@ -46,22 +47,18 @@ h1 {
 
 .card:nth-child(1) {
    background-color: rgb(102, 51, 0);
-   color: rgb(255, 255, 255);
 }
 
 .card:nth-child(2) {
    background-color: rgb(68, 51, 34);
-   color: rgb(255, 255, 255);
 }
 
 .card:nth-child(3) {
    background-color: rgb(34, 51, 68);
-   color: rgb(255, 255, 255);
 }
 
 .card:nth-child(4) {
    background-color: rgb(0, 51, 102);
-   color: rgb(255, 255, 255);
 }
 
 .gameboard > div {
