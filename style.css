@@ -25,23 +25,23 @@
 }
 
 body {
-   background-color: rgb(245, 255, 245);
+   background-color: var(--background-color);
    font-family: var(--sans-serif);
    text-align: center;
 }
 
 h1 {
-   color: rgb(102, 0, 102);
+   color: var(--heading-color);
    font-family: var(--serif);
    font-size: 300%;
    font-weight: normal;
 }
 
 .card {
-   border-color: rgb(0, 0, 0);
+   border-color: var(--card-border-color);
    border-style: solid;
    border-width: 3px;
-   color: rgb(255, 255, 255);
+   color: var(--card-text-color);
    display: inline-block;
    font-family: var(--sans-serif);
    font-size: 36px;
@@ -57,23 +57,23 @@ h1 {
 }
 
 .card.selected {
-   border-color: rgb(0, 204, 0);
+   border-color: var(--card-selected-border-color);
 }
 
 .card:nth-child(1) {
-   background-color: rgb(102, 51, 0);
+   background-color: var(--card1-color);
 }
 
 .card:nth-child(2) {
-   background-color: rgb(68, 51, 34);
+   background-color: var(--card2-color);
 }
 
 .card:nth-child(3) {
-   background-color: rgb(34, 51, 68);
+   background-color: var(--card3-color);
 }
 
 .card:nth-child(4) {
-   background-color: rgb(0, 51, 102);
+   background-color: var(--card4-color);
 }
 
 .gameboard > div {
@@ -90,25 +90,25 @@ h1 {
 }
 
 .selectable .card:hover {
-   border-color: rgb(0, 102, 0);
+   border-color: var(--hover-color);
 }
 
 .selectable .card:active {
-   border-color: rgb(102, 0, 102);
+   border-color: var(--active-color);
 }
 
 #score {
-   color: rgb(102, 51, 102);
+   color: var(--score-color);
    font-family: var(--sans-serif);
    font-size: 36px;
 }
 
 #start-next-hand {
-   background-color: rgb(85, 51, 85);
-   border-color: rgb(0, 0, 0);
+   background-color: var(--button-color);
+   border-color: var(--button-border-color);
    border-style: solid;
    border-width: 3px;
-   color: rgb(255, 255, 255);
+   color: var(--button-text-color);
    cursor: pointer;
    display: inline-block;
    font-family: var(--sans-serif);
@@ -120,11 +120,11 @@ h1 {
 }
 
 #start-next-hand:hover {
-   border-color: rgb(0, 102, 0);
+   border-color: var(--hover-color);
 }
 
 #start-next-hand:active {
-   border-color: rgb(102, 0, 102);
+   border-color: var(--active-color);
 }
 
 @media screen and (prefers-color-scheme: dark) {
