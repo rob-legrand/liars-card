@@ -23,6 +23,7 @@
    --serif:
       "Kingthings Calligraphica Light", "Palatino Linotype",
       "Book Antiqua", Georgia, Palatino, Garamond, serif;
+   color-scheme: dark light;
 }
 
 body {
