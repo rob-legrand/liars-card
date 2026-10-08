@@ -19,6 +19,7 @@
    --hover-color: rgb(0, 102, 0);
    --sans-serif: Verdana, Geneva, Tahoma, Arial, sans-serif;
    --score-color: rgb(102, 51, 102);
+   --text-color: rgb(0, 0, 0);
    --serif:
       "Kingthings Calligraphica Light", "Palatino Linotype",
       "Book Antiqua", Georgia, Palatino, Garamond, serif;
@@ -26,6 +27,7 @@
 
 body {
    background-color: var(--background-color);
+   color: var(--text-color);
    font-family: var(--sans-serif);
    text-align: center;
 }
@@ -144,5 +146,6 @@ h1 {
       --heading-color: rgb(102, 0, 102);
       --hover-color: rgb(0, 102, 0);
       --score-color: rgb(102, 51, 102);
+      --text-color: rgb(0, 0, 0);
    }
 }
