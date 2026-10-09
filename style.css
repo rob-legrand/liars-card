@@ -3,26 +3,26 @@
 @import url(/fonts/fonts.css);
 
 :root {
-   --active-color: rgb(102, 0, 102);
-   --background-color: rgb(245, 255, 245);
+   --active-color: rgb(105, 15, 105);
+   --background-color: rgb(240, 255, 240);
    --button-border-color: rgb(0, 0, 0);
-   --button-color: rgb(85, 51, 85);
+   --button-color: rgb(90, 60, 90);
    --button-text-color: rgb(255, 255, 255);
    --card-border-color: rgb(0, 0, 0);
-   --card-selected-border-color: rgb(0, 204, 0);
+   --card-selected-border-color: rgb(0, 210, 0);
    --card-text-color: rgb(255, 255, 255);
-   --card1-color: rgb(102, 51, 0);
-   --card2-color: rgb(68, 51, 34);
-   --card3-color: rgb(34, 51, 68);
-   --card4-color: rgb(0, 51, 102);
-   --heading-color: rgb(102, 0, 102);
-   --hover-color: rgb(0, 102, 0);
+   --card1-color: rgb(105, 60, 15);
+   --card2-color: rgb(75, 60, 45);
+   --card3-color: rgb(45, 60, 75);
+   --card4-color: rgb(15, 60, 105);
+   --heading-color: rgb(105, 15, 105);
+   --hover-color: rgb(15, 105, 15);
    --sans-serif: Verdana, Geneva, Tahoma, Arial, sans-serif;
-   --score-color: rgb(102, 51, 102);
-   --text-color: rgb(0, 0, 0);
+   --score-color: rgb(105, 60, 105);
    --serif:
       "Kingthings Calligraphica Light", "Palatino Linotype",
       "Book Antiqua", Georgia, Palatino, Garamond, serif;
+   --text-color: rgb(0, 0, 0);
    color-scheme: dark light;
 }
 
@@ -132,21 +132,21 @@ h1 {
 
 @media screen and (prefers-color-scheme: dark) {
    :root {
-      --active-color: rgb(102, 0, 102);
-      --background-color: rgb(245, 255, 245);
+      --active-color: rgb(105, 15, 105);
+      --background-color: rgb(240, 255, 240);
       --button-border-color: rgb(0, 0, 0);
-      --button-color: rgb(85, 51, 85);
+      --button-color: rgb(90, 60, 90);
       --button-text-color: rgb(255, 255, 255);
       --card-border-color: rgb(0, 0, 0);
-      --card-selected-border-color: rgb(0, 204, 0);
+      --card-selected-border-color: rgb(0, 210, 0);
       --card-text-color: rgb(255, 255, 255);
-      --card1-color: rgb(102, 51, 0);
-      --card2-color: rgb(68, 51, 34);
-      --card3-color: rgb(34, 51, 68);
-      --card4-color: rgb(0, 51, 102);
-      --heading-color: rgb(102, 0, 102);
-      --hover-color: rgb(0, 102, 0);
-      --score-color: rgb(102, 51, 102);
+      --card1-color: rgb(105, 60, 15);
+      --card2-color: rgb(75, 60, 45);
+      --card3-color: rgb(45, 60, 75);
+      --card4-color: rgb(15, 60, 105);
+      --heading-color: rgb(105, 15, 105);
+      --hover-color: rgb(15, 105, 15);
+      --score-color: rgb(105, 60, 105);
       --text-color: rgb(0, 0, 0);
    }
 }
