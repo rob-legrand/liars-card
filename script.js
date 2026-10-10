@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
          historyCanvas.height = game.highestScore - game.lowestScore + 1;
          historyContext.fillStyle = 'rgb(255, 255, 255)';
          historyContext.fillRect(0, 0, historyCanvas.width, historyCanvas.height);
-         historyContext.fillStyle = 'rgb(204, 204, 204)';
+         historyContext.fillStyle = 'rgb(210, 210, 210)';
          historyContext.fillRect(0, game.highestScore, historyCanvas.width, 1);
          historyContext.fillStyle = 'rgb(0, 0, 0)';
          game.scoreHistory.forEach(function (score, whichScore) {
