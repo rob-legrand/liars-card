@@ -132,21 +132,21 @@ h1 {
 
 @media screen and (prefers-color-scheme: dark) {
    :root {
-      --active-color: rgb(105, 15, 105);
-      --background-color: rgb(240, 255, 240);
-      --button-border-color: rgb(0, 0, 0);
-      --button-color: rgb(90, 60, 90);
-      --button-text-color: rgb(255, 255, 255);
-      --card-border-color: rgb(0, 0, 0);
-      --card-selected-border-color: rgb(0, 210, 0);
-      --card-text-color: rgb(255, 255, 255);
-      --card1-color: rgb(105, 60, 15);
-      --card2-color: rgb(75, 60, 45);
-      --card3-color: rgb(45, 60, 75);
-      --card4-color: rgb(15, 60, 105);
-      --heading-color: rgb(105, 15, 105);
-      --hover-color: rgb(15, 105, 15);
-      --score-color: rgb(105, 60, 105);
-      --text-color: rgb(0, 0, 0);
+      --active-color: rgb(240, 150, 240);
+      --background-color: rgb(0, 15, 0);
+      --button-border-color: rgb(255, 255, 255);
+      --button-color: rgb(195, 165, 195);
+      --button-text-color: rgb(0, 0, 0);
+      --card-border-color: rgb(255, 255, 255);
+      --card-selected-border-color: rgb(45, 255, 45);
+      --card-text-color: rgb(0, 0, 0);
+      --card1-color: rgb(240, 195, 150);
+      --card2-color: rgb(210, 195, 180);
+      --card3-color: rgb(180, 195, 210);
+      --card4-color: rgb(150, 195, 240);
+      --heading-color: rgb(240, 150, 240);
+      --hover-color: rgb(150, 240, 150);
+      --score-color: rgb(195, 150, 195);
+      --text-color: rgb(255, 255, 255);
    }
 }
