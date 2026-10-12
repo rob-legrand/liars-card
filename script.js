@@ -155,21 +155,21 @@ document.addEventListener('DOMContentLoaded', function () {
          historyCanvas.width = game.scoreHistory.length;
          historyCanvas.height = game.highestScore - game.lowestScore + 1;
          historyContext.fillStyle = (
-            matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'rgb(0, 0, 0)'
-            : 'rgb(255, 255, 255)'
+            matchMedia('(prefers-color-scheme: light)').matches
+            ? 'rgb(255, 255, 255)'
+            : 'rgb(0, 0, 0)'
          );
          historyContext.fillRect(0, 0, historyCanvas.width, historyCanvas.height);
          historyContext.fillStyle = (
-            matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'rgb(45, 45, 45)'
-            : 'rgb(210, 210, 210)'
+            matchMedia('(prefers-color-scheme: light)').matches
+            ? 'rgb(210, 210, 210)'
+            : 'rgb(45, 45, 45)'
          );
          historyContext.fillRect(0, game.highestScore, historyCanvas.width, 1);
          historyContext.fillStyle = (
-            matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'rgb(255, 255, 255)'
-            : 'rgb(0, 0, 0)'
+            matchMedia('(prefers-color-scheme: light)').matches
+            ? 'rgb(0, 0, 0)'
+            : 'rgb(255, 255, 255)'
          );
          game.scoreHistory.forEach(function (score, whichScore) {
             historyContext.fillRect(whichScore, game.highestScore - score, 1, 1);
