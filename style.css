@@ -4,71 +4,71 @@
 
 :root {
    --active-color: light-dark(
-      rgb(240, 150, 240),
+      rgb(105, 15, 105),
       rgb(240, 150, 240)
    );
    --background-color: light-dark(
-      rgb(0, 15, 0),
+      rgb(240, 255, 240),
       rgb(0, 15, 0)
    );
    --button-border-color: light-dark(
-      rgb(255, 255, 255),
+      rgb(0, 0, 0),
       rgb(255, 255, 255)
    );
    --button-color: light-dark(
-      rgb(195, 165, 195),
+      rgb(90, 60, 90),
       rgb(195, 165, 195)
    );
    --button-text-color: light-dark(
-      rgb(0, 0, 0),
+      rgb(255, 255, 255),
       rgb(0, 0, 0)
    );
    --card-border-color: light-dark(
-      rgb(255, 255, 255),
+      rgb(0, 0, 0),
       rgb(255, 255, 255)
    );
    --card-selected-border-color: light-dark(
-      rgb(45, 255, 45),
+      rgb(0, 210, 0),
       rgb(45, 255, 45)
    );
    --card-text-color: light-dark(
-      rgb(0, 0, 0),
+      rgb(255, 255, 255),
       rgb(0, 0, 0)
    );
    --card1-color: light-dark(
-      rgb(240, 195, 150),
+      rgb(105, 60, 15),
       rgb(240, 195, 150)
    );
    --card2-color: light-dark(
-      rgb(210, 195, 180),
+      rgb(75, 60, 45),
       rgb(210, 195, 180)
    );
    --card3-color: light-dark(
-      rgb(180, 195, 210),
+      rgb(45, 60, 75),
       rgb(180, 195, 210)
    );
    --card4-color: light-dark(
-      rgb(150, 195, 240),
+      rgb(15, 60, 105),
       rgb(150, 195, 240)
    );
    --heading-color: light-dark(
-      rgb(240, 150, 240),
+      rgb(105, 15, 105),
       rgb(240, 150, 240)
    );
    --hover-color: light-dark(
-      rgb(150, 240, 150),
+      rgb(15, 105, 15),
       rgb(150, 240, 150)
    );
    --sans-serif: Verdana, Geneva, Tahoma, Arial, sans-serif;
    --score-color: light-dark(
-      rgb(195, 150, 195),
+      rgb(105, 60, 105),
       rgb(195, 150, 195)
    );
    --serif:
       "Kingthings Calligraphica Light", "Palatino Linotype",
       "Book Antiqua", Georgia, Palatino, Garamond, serif;
    --text-color: light-dark(
-      rgb(255, 255, 255),
+      rgb(0, 0, 0),
       rgb(255, 255, 255)
    );
    color-scheme: dark light;
