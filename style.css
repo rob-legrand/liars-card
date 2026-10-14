@@ -9,11 +9,11 @@
    );
    --background-color: light-dark(
       rgb(240, 255, 240),
-      rgb(0, 15, 0)
+      rgb(0, 30, 0)
    );
    --button-border-color: light-dark(
       rgb(0, 0, 0),
-      rgb(255, 255, 255)
+      rgb(225, 225, 225)
    );
    --button-color: light-dark(
       rgb(90, 60, 90),
@@ -25,7 +25,7 @@
    );
    --card-border-color: light-dark(
       rgb(0, 0, 0),
-      rgb(255, 255, 255)
+      rgb(225, 225, 225)
    );
    --card-selected-border-color: light-dark(
       rgb(0, 210, 0),
@@ -37,19 +37,19 @@
    );
    --card1-color: light-dark(
       rgb(105, 60, 15),
-      rgb(240, 195, 150)
+      rgb(210, 165, 120)
    );
    --card2-color: light-dark(
       rgb(75, 60, 45),
-      rgb(210, 195, 180)
+      rgb(180, 165, 150)
    );
    --card3-color: light-dark(
       rgb(45, 60, 75),
-      rgb(180, 195, 210)
+      rgb(150, 165, 180)
    );
    --card4-color: light-dark(
       rgb(15, 60, 105),
-      rgb(150, 195, 240)
+      rgb(120, 165, 210)
    );
    --heading-color: light-dark(
       rgb(105, 15, 105),
